@@ -18,7 +18,8 @@ interface LocalStroke {
 interface DrawingCanvasProps {
   panelId: string
   fileName?: string
-  isUnsaved?: boolean
+  filePath?: string
+  initialStrokes?: ReadonlyArray<Stroke>
   onSave?: (panelId: string, strokes: ReadonlyArray<Stroke>) => void
 }
 
@@ -48,7 +49,8 @@ const BRUSH_SIZES = [2, 4, 8, 12, 20]
 export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
   panelId,
   fileName: _fileName,
-  isUnsaved = false,
+  filePath: _filePath,
+  initialStrokes,
   onSave,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -57,6 +59,20 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
   // Use jotai atom for panel-specific state
   const panelStateAtom = useMemo(() => panelDrawingStateFamily(panelId), [panelId])
   const [panelState, setPanelState] = useAtom(panelStateAtom)
+
+  // Track if we've loaded initial strokes
+  const [hasLoadedInitial, setHasLoadedInitial] = useState(false)
+
+  // Load initial strokes when provided
+  useEffect(() => {
+    if (initialStrokes && !hasLoadedInitial) {
+      setPanelState((prev) => ({
+        ...prev,
+        strokes: initialStrokes,
+      }))
+      setHasLoadedInitial(true)
+    }
+  }, [initialStrokes, hasLoadedInitial, setPanelState])
 
   // Local state for current stroke (not persisted until complete)
   const [currentStroke, setCurrentStroke] = useState<LocalStroke | null>(null)
@@ -348,13 +364,12 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
 
         {/* Actions */}
         <div className='flex items-center gap-1'>
-          {/* Save button - only show for unsaved canvases */}
-          {isUnsaved && onSave && (
+          {/* Save button */}
+          {onSave && (
             <button
               type='button'
               onClick={() => onSave(panelId, panelState.strokes)}
-              disabled={panelState.strokes.length === 0}
-              className='p-2 rounded-md hover:bg-primary hover:text-primary-foreground transition-colors disabled:opacity-30 text-primary'
+              className='p-2 rounded-md hover:bg-primary hover:text-primary-foreground transition-colors text-primary'
               aria-label='Save drawing'
             >
               <Save className='w-4 h-4' />

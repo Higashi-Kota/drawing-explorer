@@ -81,6 +81,9 @@ importers:
       react-dom:
         specifier: ^19.2.3
         version: 19.2.3(react@19.2.3)
+      ts-pattern:
+        specifier: ^5.9.0
+        version: 5.9.0
     devDependencies:
       '@internal/shared-config':
         specifier: workspace:*

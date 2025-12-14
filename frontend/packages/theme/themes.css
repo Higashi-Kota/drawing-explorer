@@ -600,3 +600,16 @@
   background-color: var(--color-nouveau-semantic-selected);
   color: var(--color-nouveau-semantic-selected-foreground);
 }
+
+/* ============================================
+  Tailwind v4 Theme Registration
+
+  Register CSS custom properties for Tailwind utility generation.
+  These reference the theme-switched variables from :root and data-theme selectors,
+  enabling dynamic theme switching while maintaining Tailwind class support.
+  ============================================ */
+@theme {
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-strong: var(--color-border-strong);
+}
