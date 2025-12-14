@@ -61,14 +61,14 @@
       "ring": { "value": "{color.kumiko.urushi.400}" },
       "ring-offset": { "value": "{color.kumiko.hinoki.50}" },
 
-      "selected": { "value": "{color.kumiko.urushi.100}" },
-      "selected-foreground": { "value": "{color.kumiko.urushi.800}" },
+      "selected": { "value": "{color.kumiko.urushi.500}" },
+      "selected-foreground": { "value": "{color.kumiko.hinoki.50}" },
 
-      "panel-hover": { "value": "{color.kumiko.hinoki.100}" },
+      "panel-hover": { "value": "{color.kumiko.urushi.50}" },
       "panel-active": { "value": "{color.kumiko.urushi.100}" },
 
       "tab-inactive": { "value": "{color.kumiko.kiri.100}" },
-      "tab-inactive-hover": { "value": "{color.kumiko.hinoki.200}" },
+      "tab-inactive-hover": { "value": "{color.kumiko.urushi.100}" },
       "tab-active": { "value": "{color.kumiko.hinoki.50}" },
       "tab-border": { "value": "{color.kumiko.hinoki.300}" },
 

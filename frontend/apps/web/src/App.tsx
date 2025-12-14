@@ -6,15 +6,14 @@ import {
   type PanelContent,
   type PanelNode,
 } from "@internal/dock"
+import { DrawingCanvas, type Stroke } from "@internal/drawing"
 import { Provider as JotaiProvider } from "jotai"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { DrawingCanvas } from "./components/DrawingCanvas"
 import { Header } from "./components/Header"
 import { Sidebar, type SidebarRef } from "./components/Sidebar"
 import type { FileNode as OPFSFileNode } from "./lib/opfs"
 import { readFile, writeFile } from "./lib/opfs"
 import { getOPFSStore } from "./stores/opfsStore"
-import type { Stroke } from "./stores/panelState"
 
 // Create initial layout with a new canvas
 const createInitialLayout = (): PanelNode => ({

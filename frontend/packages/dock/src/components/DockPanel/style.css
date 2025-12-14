@@ -7,10 +7,6 @@
   border: var(--spacing-px) solid var(--color-border);
   border-radius: var(--radius-lg);
 
-  &[data-dragging] {
-    opacity: 0.5;
-  }
-
   &[data-maximized] {
     position: fixed;
     inset: 0;

@@ -14,6 +14,7 @@
     "overlay": { "value": "90" },
     "max": { "value": "999" },
     "drop-indicator": { "value": "1000" },
-    "drop-indicator-tab": { "value": "1100" }
+    "drop-indicator-tab": { "value": "1100" },
+    "drag-preview": { "value": "9999" }
   }
 }

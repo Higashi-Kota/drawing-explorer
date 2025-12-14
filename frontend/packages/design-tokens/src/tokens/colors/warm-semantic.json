@@ -61,8 +61,8 @@
       "ring": { "value": "{color.warm.terracotta.400}" },
       "ring-offset": { "value": "{color.warm.cream.50}" },
 
-      "selected": { "value": "{color.warm.terracotta.100}" },
-      "selected-foreground": { "value": "{color.warm.terracotta.800}" },
+      "selected": { "value": "{color.warm.terracotta.500}" },
+      "selected-foreground": { "value": "{color.warm.cream.50}" },
 
       "panel-hover": { "value": "{color.warm.cream.200}" },
       "panel-active": { "value": "{color.warm.terracotta.100}" },

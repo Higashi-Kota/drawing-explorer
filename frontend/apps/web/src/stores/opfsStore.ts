@@ -336,8 +336,36 @@ export class OPFSStore {
   // OPFS Operations
   // ==========================================
 
+  /**
+   * Check if a name already exists in the given parent folder
+   * @returns Error message if duplicate exists, null otherwise
+   */
+  checkDuplicateName(parentPath: string, name: string, excludePath?: string): string | null {
+    const parent = parentPath === "" ? this._root : this.getFolder(parentPath)
+    if (!parent) return null
+
+    for (const child of parent.children) {
+      // Skip the node being renamed
+      if (excludePath && child.path === excludePath) continue
+
+      if (child.name.toLowerCase() === name.toLowerCase()) {
+        const typeLabel = child.type === "folder" ? "フォルダ" : "ファイル"
+        return `同じ名前の${typeLabel}「${child.name}」が既に存在します`
+      }
+    }
+
+    return null
+  }
+
   async create(parentPath: string, name: string, type: "file" | "folder"): Promise<boolean> {
     if (!this._rootHandle) return false
+
+    // Check for duplicate name
+    const duplicateError = this.checkDuplicateName(parentPath, name)
+    if (duplicateError) {
+      alert(duplicateError)
+      return false
+    }
 
     // Get parent handle
     const parentHandle =
@@ -370,8 +398,19 @@ export class OPFSStore {
     const node = this.getNode(path)
     if (!node) return false
 
+    // Skip if name is unchanged
+    if (node.name === newName) return true
+
     // Get parent handle
     const parentPath = this.getParentPath(path)
+
+    // Check for duplicate name (exclude self)
+    const duplicateError = this.checkDuplicateName(parentPath, newName, path)
+    if (duplicateError) {
+      alert(duplicateError)
+      return false
+    }
+
     const parentHandle =
       parentPath === "" ? this._rootHandle : await this.getDirectoryHandle(parentPath)
 
@@ -439,6 +478,13 @@ export class OPFSStore {
       // Skip if moving to same location
       const sourceParent = this.getParentPath(sourcePath)
       if (sourceParent === targetFolderPath) continue
+
+      // Check for duplicate name in target folder
+      const duplicateError = this.checkDuplicateName(targetFolderPath, node.name)
+      if (duplicateError) {
+        alert(duplicateError)
+        return false
+      }
 
       const result = await moveEntry(
         this._rootHandle,

@@ -187,7 +187,7 @@ export const ExpandedTree: Story = {
       }
 
       return (
-        <div className='w-64 h-[500px] overflow-auto bg-background border border-border rounded-lg'>
+        <div className='w-64 h-125 overflow-auto bg-background border border-border rounded-lg'>
           <TreeView tree={tree} onTreeUpdate={handleTreeUpdate} />
         </div>
       )

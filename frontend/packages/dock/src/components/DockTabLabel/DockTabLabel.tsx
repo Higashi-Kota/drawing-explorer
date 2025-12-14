@@ -187,9 +187,8 @@ export const DockTabLabel: React.FC<DockTabLabelProps> = ({
         ${
           isActive
             ? "bg-card border-border text-foreground -mb-px"
-            : "bg-muted border-transparent text-muted-foreground hover:text-foreground hover:bg-accent"
+            : "bg-tab-inactive border-transparent text-muted-foreground hover:text-foreground hover:bg-tab-inactive-hover"
         }
-        ${state.type === "dragging" ? "opacity-50" : ""}
       `}
       data-tab-index={tabIndex}
     >

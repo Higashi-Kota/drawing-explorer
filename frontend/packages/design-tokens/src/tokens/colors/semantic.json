@@ -61,8 +61,8 @@
       "ring": { "value": "{color.base.indigo.600}" },
       "ring-offset": { "value": "oklch(99% 0 0)" },
 
-      "selected": { "value": "{color.base.indigo.300}" },
-      "selected-foreground": { "value": "oklch(28% 0.1 275)" },
+      "selected": { "value": "{color.base.indigo.500}" },
+      "selected-foreground": { "value": "{color.base.white}" },
 
       "panel-hover": { "value": "{color.base.slate.100}" },
       "panel-active": { "value": "{color.base.indigo.100}" },

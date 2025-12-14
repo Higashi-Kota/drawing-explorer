@@ -23,10 +23,6 @@
     margin-bottom: calc(-1 * var(--spacing-px));
   }
 
-  &[data-dragging] {
-    opacity: 0.5;
-  }
-
   &[data-drop-target] {
     box-shadow: 0 0 0 var(--spacing-0_5) var(--color-primary);
   }

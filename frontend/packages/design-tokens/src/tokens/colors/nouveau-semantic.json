@@ -61,14 +61,14 @@
       "ring": { "value": "{color.nouveau.moss.400}" },
       "ring-offset": { "value": "{color.nouveau.ivory.50}" },
 
-      "selected": { "value": "{color.nouveau.moss.100}" },
-      "selected-foreground": { "value": "{color.nouveau.moss.800}" },
+      "selected": { "value": "{color.nouveau.moss.500}" },
+      "selected-foreground": { "value": "{color.nouveau.ivory.50}" },
 
-      "panel-hover": { "value": "{color.nouveau.ivory.200}" },
+      "panel-hover": { "value": "{color.nouveau.moss.50}" },
       "panel-active": { "value": "{color.nouveau.moss.100}" },
 
       "tab-inactive": { "value": "{color.nouveau.ivory.100}" },
-      "tab-inactive-hover": { "value": "{color.nouveau.ivory.200}" },
+      "tab-inactive-hover": { "value": "{color.nouveau.moss.100}" },
       "tab-active": { "value": "{color.nouveau.ivory.50}" },
       "tab-border": { "value": "{color.nouveau.ivory.300}" },
 
