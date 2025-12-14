@@ -1,0 +1,16 @@
+{
+  "name": "@internal/theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./index.css": "./index.css"
+  },
+  "files": [
+    "index.css"
+  ],
+  "dependencies": {
+    "@internal/design-tokens": "workspace:*",
+    "tailwindcss": "^4.1.18"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@internal/design-tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind-theme.css": "./dist/tailwind-theme.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "style-dictionary": "^4.2.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@internal/shared-config": "workspace:*",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
+}

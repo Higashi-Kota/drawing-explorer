@@ -1,0 +1,82 @@
+{
+  "color": {
+    "nouveau": {
+      "comment": "Art Nouveau Theme - Organic curves, nature-inspired, Mucha-style elegance. Gold, moss green, burgundy.",
+
+      "gold": {
+        "comment": "Antique gold - rich metallic warmth (hue ~75)",
+        "50": { "value": "oklch(97% 0.020 75)" },
+        "100": { "value": "oklch(94% 0.045 75)" },
+        "200": { "value": "oklch(88% 0.085 75)" },
+        "300": { "value": "oklch(80% 0.125 75)" },
+        "400": { "value": "oklch(72% 0.150 75)" },
+        "500": { "value": "oklch(65% 0.155 75)" },
+        "600": { "value": "oklch(55% 0.145 75)" },
+        "700": { "value": "oklch(45% 0.125 75)" },
+        "800": { "value": "oklch(35% 0.098 75)" },
+        "900": { "value": "oklch(25% 0.068 75)" },
+        "950": { "value": "oklch(18% 0.042 75)" }
+      },
+
+      "moss": {
+        "comment": "Moss green - organic nature tone (hue ~145)",
+        "50": { "value": "oklch(97% 0.012 145)" },
+        "100": { "value": "oklch(94% 0.028 145)" },
+        "200": { "value": "oklch(88% 0.052 145)" },
+        "300": { "value": "oklch(78% 0.078 145)" },
+        "400": { "value": "oklch(65% 0.098 145)" },
+        "500": { "value": "oklch(52% 0.105 145)" },
+        "600": { "value": "oklch(44% 0.095 145)" },
+        "700": { "value": "oklch(36% 0.078 145)" },
+        "800": { "value": "oklch(28% 0.058 145)" },
+        "900": { "value": "oklch(20% 0.038 145)" },
+        "950": { "value": "oklch(14% 0.022 145)" }
+      },
+
+      "ivory": {
+        "comment": "Aged ivory - warm off-white background (hue ~60)",
+        "50": { "value": "oklch(99% 0.010 60)" },
+        "100": { "value": "oklch(97% 0.018 60)" },
+        "200": { "value": "oklch(94% 0.028 60)" },
+        "300": { "value": "oklch(90% 0.038 60)" },
+        "400": { "value": "oklch(84% 0.048 60)" },
+        "500": { "value": "oklch(76% 0.052 60)" },
+        "600": { "value": "oklch(66% 0.048 60)" },
+        "700": { "value": "oklch(56% 0.042 60)" },
+        "800": { "value": "oklch(46% 0.035 60)" },
+        "900": { "value": "oklch(36% 0.028 60)" },
+        "950": { "value": "oklch(26% 0.020 60)" }
+      },
+
+      "burgundy": {
+        "comment": "Deep burgundy - rich wine red accent (hue ~15)",
+        "50": { "value": "oklch(96% 0.015 15)" },
+        "100": { "value": "oklch(92% 0.035 15)" },
+        "200": { "value": "oklch(85% 0.068 15)" },
+        "300": { "value": "oklch(72% 0.108 15)" },
+        "400": { "value": "oklch(58% 0.145 15)" },
+        "500": { "value": "oklch(45% 0.160 15)" },
+        "600": { "value": "oklch(38% 0.150 15)" },
+        "700": { "value": "oklch(32% 0.130 15)" },
+        "800": { "value": "oklch(26% 0.105 15)" },
+        "900": { "value": "oklch(20% 0.075 15)" },
+        "950": { "value": "oklch(14% 0.048 15)" }
+      },
+
+      "bronze": {
+        "comment": "Patina bronze - aged metallic (hue ~55)",
+        "50": { "value": "oklch(96% 0.012 55)" },
+        "100": { "value": "oklch(90% 0.025 55)" },
+        "200": { "value": "oklch(82% 0.042 55)" },
+        "300": { "value": "oklch(70% 0.058 55)" },
+        "400": { "value": "oklch(58% 0.068 55)" },
+        "500": { "value": "oklch(48% 0.072 55)" },
+        "600": { "value": "oklch(40% 0.065 55)" },
+        "700": { "value": "oklch(32% 0.055 55)" },
+        "800": { "value": "oklch(24% 0.042 55)" },
+        "900": { "value": "oklch(18% 0.030 55)" },
+        "950": { "value": "oklch(12% 0.018 55)" }
+      }
+    }
+  }
+}

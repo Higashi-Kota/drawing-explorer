@@ -1,0 +1,19 @@
+{
+  "z-index": {
+    "hide": { "value": "-1" },
+    "auto": { "value": "auto" },
+    "base": { "value": "0" },
+    "dropdown": { "value": "10" },
+    "sticky": { "value": "20" },
+    "fixed": { "value": "30" },
+    "backdrop": { "value": "40" },
+    "modal": { "value": "50" },
+    "popover": { "value": "60" },
+    "tooltip": { "value": "70" },
+    "toast": { "value": "80" },
+    "overlay": { "value": "90" },
+    "max": { "value": "999" },
+    "drop-indicator": { "value": "1000" },
+    "drop-indicator-tab": { "value": "1100" }
+  }
+}

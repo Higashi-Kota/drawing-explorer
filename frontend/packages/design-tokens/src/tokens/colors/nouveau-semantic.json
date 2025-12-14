@@ -1,0 +1,102 @@
+{
+  "color": {
+    "nouveau-semantic": {
+      "comment": "Art Nouveau Theme - Organic elegance with gold, moss, and burgundy inspired by Mucha",
+
+      "background": { "value": "{color.nouveau.ivory.50}" },
+      "background-subtle": { "value": "{color.nouveau.ivory.100}" },
+      "foreground": { "value": "{color.nouveau.bronze.900}" },
+      "foreground-muted": { "value": "{color.nouveau.bronze.600}" },
+
+      "surface": { "value": "{color.nouveau.ivory.100}" },
+      "surface-raised": { "value": "{color.nouveau.ivory.50}" },
+      "surface-overlay": { "value": "{color.nouveau.ivory.100}" },
+
+      "muted": { "value": "{color.nouveau.ivory.200}" },
+      "muted-foreground": { "value": "{color.nouveau.bronze.500}" },
+
+      "card": { "value": "{color.nouveau.ivory.50}" },
+      "card-foreground": { "value": "{color.nouveau.bronze.900}" },
+
+      "popover": { "value": "{color.nouveau.ivory.50}" },
+      "popover-foreground": { "value": "{color.nouveau.bronze.900}" },
+
+      "primary": { "value": "{color.nouveau.moss.500}" },
+      "primary-foreground": { "value": "{color.nouveau.ivory.50}" },
+      "primary-hover": { "value": "{color.nouveau.moss.600}" },
+      "primary-muted": { "value": "{color.nouveau.moss.100}" },
+
+      "secondary": { "value": "{color.nouveau.gold.200}" },
+      "secondary-foreground": { "value": "{color.nouveau.bronze.800}" },
+      "secondary-hover": { "value": "{color.nouveau.gold.300}" },
+
+      "accent": { "value": "{color.nouveau.gold.500}" },
+      "accent-foreground": { "value": "{color.nouveau.bronze.900}" },
+      "accent-hover": { "value": "{color.nouveau.gold.600}" },
+      "accent-muted": { "value": "{color.nouveau.gold.100}" },
+
+      "destructive": { "value": "{color.nouveau.burgundy.500}" },
+      "destructive-foreground": { "value": "{color.nouveau.ivory.50}" },
+      "destructive-hover": { "value": "{color.nouveau.burgundy.600}" },
+      "destructive-muted": { "value": "{color.nouveau.burgundy.100}" },
+
+      "success": { "value": "{color.nouveau.moss.600}" },
+      "success-foreground": { "value": "{color.nouveau.ivory.50}" },
+      "success-muted": { "value": "{color.nouveau.moss.100}" },
+
+      "warning": { "value": "{color.nouveau.gold.600}" },
+      "warning-foreground": { "value": "{color.nouveau.bronze.900}" },
+      "warning-muted": { "value": "{color.nouveau.gold.100}" },
+
+      "info": { "value": "oklch(55% 0.120 220)" },
+      "info-foreground": { "value": "{color.nouveau.ivory.50}" },
+      "info-muted": { "value": "oklch(94% 0.030 220)" },
+
+      "border": { "value": "{color.nouveau.ivory.400}" },
+      "border-subtle": { "value": "{color.nouveau.ivory.300}" },
+      "border-strong": { "value": "{color.nouveau.gold.400}" },
+      "input": { "value": "{color.nouveau.ivory.200}" },
+      "input-focus": { "value": "{color.nouveau.moss.400}" },
+
+      "ring": { "value": "{color.nouveau.moss.400}" },
+      "ring-offset": { "value": "{color.nouveau.ivory.50}" },
+
+      "selected": { "value": "{color.nouveau.moss.100}" },
+      "selected-foreground": { "value": "{color.nouveau.moss.800}" },
+
+      "panel-hover": { "value": "{color.nouveau.ivory.200}" },
+      "panel-active": { "value": "{color.nouveau.moss.100}" },
+
+      "tab-inactive": { "value": "{color.nouveau.ivory.100}" },
+      "tab-inactive-hover": { "value": "{color.nouveau.ivory.200}" },
+      "tab-active": { "value": "{color.nouveau.ivory.50}" },
+      "tab-border": { "value": "{color.nouveau.ivory.300}" },
+
+      "neutral": { "value": "{color.nouveau.ivory.200}" },
+      "neutral-hover": { "value": "{color.nouveau.ivory.300}" },
+      "neutral-active": { "value": "{color.nouveau.gold.200}" },
+      "neutral-foreground": { "value": "{color.nouveau.bronze.500}" },
+      "neutral-foreground-hover": { "value": "{color.nouveau.bronze.600}" },
+
+      "handle": { "value": "transparent" },
+      "handle-hover": { "value": "{color.nouveau.ivory.200}" },
+      "handle-active": { "value": "{color.nouveau.moss.100}" },
+      "handle-foreground": { "value": "{color.nouveau.ivory.500}" },
+      "handle-foreground-hover": { "value": "{color.nouveau.ivory.600}" },
+      "handle-foreground-active": { "value": "{color.nouveau.moss.500}" },
+
+      "drop-indicator": { "value": "{color.nouveau.moss.500}" },
+      "drop-indicator-bg": { "value": "oklch(52% 0.105 145 / 0.15)" },
+
+      "divider": { "value": "{color.nouveau.ivory.400}" },
+      "divider-hover": { "value": "{color.nouveau.gold.400}" },
+      "divider-active": { "value": "{color.nouveau.moss.500}" },
+
+      "scrollbar-thumb": { "value": "{color.nouveau.moss.400}" },
+      "scrollbar-thumb-hover": { "value": "{color.nouveau.moss.500}" },
+
+      "glow-primary": { "value": "{color.nouveau.moss.500}" },
+      "glow-accent": { "value": "{color.nouveau.gold.500}" }
+    }
+  }
+}

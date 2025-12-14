@@ -1,0 +1,102 @@
+{
+  "color": {
+    "kumiko-semantic": {
+      "comment": "Kumiko Theme - Light mode wooden lattice with traditional Japanese craft warmth",
+
+      "background": { "value": "{color.kumiko.hinoki.50}" },
+      "background-subtle": { "value": "{color.kumiko.hinoki.100}" },
+      "foreground": { "value": "{color.kumiko.sumi.800}" },
+      "foreground-muted": { "value": "{color.kumiko.sumi.500}" },
+
+      "surface": { "value": "{color.kumiko.kiri.50}" },
+      "surface-raised": { "value": "{color.kumiko.hinoki.100}" },
+      "surface-overlay": { "value": "{color.kumiko.kiri.100}" },
+
+      "muted": { "value": "{color.kumiko.kiri.200}" },
+      "muted-foreground": { "value": "{color.kumiko.sumi.400}" },
+
+      "card": { "value": "{color.kumiko.kiri.50}" },
+      "card-foreground": { "value": "{color.kumiko.sumi.800}" },
+
+      "popover": { "value": "{color.kumiko.hinoki.50}" },
+      "popover-foreground": { "value": "{color.kumiko.sumi.800}" },
+
+      "primary": { "value": "{color.kumiko.urushi.500}" },
+      "primary-foreground": { "value": "{color.kumiko.hinoki.50}" },
+      "primary-hover": { "value": "{color.kumiko.urushi.600}" },
+      "primary-muted": { "value": "{color.kumiko.urushi.100}" },
+
+      "secondary": { "value": "{color.kumiko.hinoki.200}" },
+      "secondary-foreground": { "value": "{color.kumiko.sumi.700}" },
+      "secondary-hover": { "value": "{color.kumiko.hinoki.300}" },
+
+      "accent": { "value": "{color.kumiko.tatami.500}" },
+      "accent-foreground": { "value": "{color.kumiko.hinoki.50}" },
+      "accent-hover": { "value": "{color.kumiko.tatami.600}" },
+      "accent-muted": { "value": "{color.kumiko.tatami.100}" },
+
+      "destructive": { "value": "oklch(55% 0.180 20)" },
+      "destructive-foreground": { "value": "{color.kumiko.hinoki.50}" },
+      "destructive-hover": { "value": "oklch(48% 0.175 20)" },
+      "destructive-muted": { "value": "oklch(94% 0.035 20)" },
+
+      "success": { "value": "{color.kumiko.tatami.600}" },
+      "success-foreground": { "value": "{color.kumiko.hinoki.50}" },
+      "success-muted": { "value": "{color.kumiko.tatami.100}" },
+
+      "warning": { "value": "{color.kumiko.hinoki.600}" },
+      "warning-foreground": { "value": "{color.kumiko.sumi.900}" },
+      "warning-muted": { "value": "{color.kumiko.hinoki.100}" },
+
+      "info": { "value": "oklch(58% 0.100 230)" },
+      "info-foreground": { "value": "{color.kumiko.hinoki.50}" },
+      "info-muted": { "value": "oklch(94% 0.025 230)" },
+
+      "border": { "value": "{color.kumiko.hinoki.300}" },
+      "border-subtle": { "value": "{color.kumiko.hinoki.200}" },
+      "border-strong": { "value": "{color.kumiko.kiri.500}" },
+      "input": { "value": "{color.kumiko.hinoki.200}" },
+      "input-focus": { "value": "{color.kumiko.urushi.400}" },
+
+      "ring": { "value": "{color.kumiko.urushi.400}" },
+      "ring-offset": { "value": "{color.kumiko.hinoki.50}" },
+
+      "selected": { "value": "{color.kumiko.urushi.100}" },
+      "selected-foreground": { "value": "{color.kumiko.urushi.800}" },
+
+      "panel-hover": { "value": "{color.kumiko.hinoki.100}" },
+      "panel-active": { "value": "{color.kumiko.urushi.100}" },
+
+      "tab-inactive": { "value": "{color.kumiko.kiri.100}" },
+      "tab-inactive-hover": { "value": "{color.kumiko.hinoki.200}" },
+      "tab-active": { "value": "{color.kumiko.hinoki.50}" },
+      "tab-border": { "value": "{color.kumiko.hinoki.300}" },
+
+      "neutral": { "value": "{color.kumiko.kiri.200}" },
+      "neutral-hover": { "value": "{color.kumiko.kiri.300}" },
+      "neutral-active": { "value": "{color.kumiko.hinoki.300}" },
+      "neutral-foreground": { "value": "{color.kumiko.sumi.500}" },
+      "neutral-foreground-hover": { "value": "{color.kumiko.sumi.600}" },
+
+      "handle": { "value": "transparent" },
+      "handle-hover": { "value": "{color.kumiko.hinoki.200}" },
+      "handle-active": { "value": "{color.kumiko.urushi.100}" },
+      "handle-foreground": { "value": "{color.kumiko.kiri.500}" },
+      "handle-foreground-hover": { "value": "{color.kumiko.kiri.600}" },
+      "handle-foreground-active": { "value": "{color.kumiko.urushi.500}" },
+
+      "drop-indicator": { "value": "{color.kumiko.urushi.500}" },
+      "drop-indicator-bg": { "value": "oklch(50% 0.125 25 / 0.15)" },
+
+      "divider": { "value": "{color.kumiko.kiri.400}" },
+      "divider-hover": { "value": "{color.kumiko.urushi.400}" },
+      "divider-active": { "value": "{color.kumiko.urushi.500}" },
+
+      "scrollbar-thumb": { "value": "{color.kumiko.hinoki.500}" },
+      "scrollbar-thumb-hover": { "value": "{color.kumiko.hinoki.600}" },
+
+      "glow-primary": { "value": "{color.kumiko.urushi.500}" },
+      "glow-accent": { "value": "{color.kumiko.tatami.500}" }
+    }
+  }
+}

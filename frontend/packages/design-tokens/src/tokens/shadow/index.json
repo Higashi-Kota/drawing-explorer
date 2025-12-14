@@ -1,0 +1,24 @@
+{
+  "shadow": {
+    "xs": { "value": "0 1px 2px oklch(25% 0.02 260 / 4%)" },
+    "sm": { "value": "0 1px 3px oklch(25% 0.02 260 / 6%), 0 1px 2px oklch(25% 0.02 260 / 4%)" },
+    "md": {
+      "value": "0 4px 6px -1px oklch(25% 0.02 260 / 7%), 0 2px 4px -2px oklch(25% 0.02 260 / 5%)"
+    },
+    "lg": {
+      "value": "0 10px 15px -3px oklch(25% 0.02 260 / 8%), 0 4px 6px -4px oklch(25% 0.02 260 / 5%)"
+    },
+    "xl": {
+      "value": "0 20px 25px -5px oklch(25% 0.02 260 / 10%), 0 8px 10px -6px oklch(25% 0.02 260 / 5%)"
+    },
+    "2xl": { "value": "0 25px 50px -12px oklch(25% 0.02 260 / 25%)" },
+    "inner": { "value": "inset 0 2px 4px oklch(25% 0.02 260 / 4%)" },
+    "none": { "value": "none" },
+    "glow-primary": { "value": "0 0 20px oklch(52% 0.18 275 / 20%)" },
+    "glow-sm": { "value": "0 0 10px oklch(52% 0.18 275 / 15%)" },
+    "panel": { "value": "0 4px 12px oklch(25% 0.02 260 / 8%), 0 1px 3px oklch(25% 0.02 260 / 5%)" },
+    "dropdown": {
+      "value": "0 10px 38px -10px oklch(25% 0.02 260 / 35%), 0 10px 20px -15px oklch(25% 0.02 260 / 20%)"
+    }
+  }
+}

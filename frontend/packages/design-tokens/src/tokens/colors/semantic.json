@@ -1,0 +1,124 @@
+{
+  "color": {
+    "semantic": {
+      "comment": "Default Theme - Clean professional with indigo primary. This is the base semantic layer.",
+
+      "background": { "value": "{color.base.slate.50}" },
+      "background-subtle": { "value": "{color.base.slate.100}" },
+      "foreground": { "value": "{color.base.slate.900}" },
+      "foreground-muted": { "value": "{color.base.slate.500}" },
+
+      "surface": { "value": "{color.base.slate.50}" },
+      "surface-raised": { "value": "oklch(98% 0.003 275)" },
+      "surface-overlay": { "value": "oklch(100% 0 0 / 98%)" },
+
+      "muted": { "value": "oklch(95% 0.005 260)" },
+      "muted-foreground": { "value": "{color.base.slate.500}" },
+
+      "card": { "value": "oklch(99.5% 0.003 275)" },
+      "card-foreground": { "value": "{color.base.slate.900}" },
+
+      "popover": { "value": "oklch(100% 0 0 / 95%)" },
+      "popover-foreground": { "value": "{color.base.slate.900}" },
+
+      "primary": { "value": "{color.base.indigo.600}" },
+      "primary-foreground": { "value": "oklch(99% 0 0)" },
+      "primary-hover": { "value": "{color.base.indigo.700}" },
+      "primary-muted": { "value": "{color.base.indigo.100}" },
+
+      "secondary": { "value": "{color.base.indigo.100}" },
+      "secondary-foreground": { "value": "{color.base.indigo.900}" },
+      "secondary-hover": { "value": "oklch(92% 0.02 275)" },
+
+      "accent": { "value": "{color.base.indigo.200}" },
+      "accent-foreground": { "value": "{color.base.slate.700}" },
+      "accent-hover": { "value": "{color.base.indigo.300}" },
+      "accent-muted": { "value": "{color.base.indigo.100}" },
+
+      "destructive": { "value": "{color.base.rose.500}" },
+      "destructive-foreground": { "value": "oklch(99% 0 0)" },
+      "destructive-hover": { "value": "{color.base.rose.600}" },
+      "destructive-muted": { "value": "{color.base.rose.100}" },
+
+      "success": { "value": "{color.base.green.500}" },
+      "success-foreground": { "value": "oklch(99% 0 0)" },
+      "success-muted": { "value": "{color.base.green.100}" },
+
+      "warning": { "value": "{color.base.amber.500}" },
+      "warning-foreground": { "value": "{color.base.amber.950}" },
+      "warning-muted": { "value": "{color.base.amber.100}" },
+
+      "info": { "value": "oklch(55% 0.15 240)" },
+      "info-foreground": { "value": "oklch(99% 0 0)" },
+      "info-muted": { "value": "oklch(94% 0.025 240)" },
+
+      "border": { "value": "{color.base.slate.300}" },
+      "border-subtle": { "value": "{color.base.slate.200}" },
+      "border-strong": { "value": "{color.base.slate.400}" },
+      "input": { "value": "oklch(92% 0.005 260)" },
+      "input-focus": { "value": "{color.base.indigo.500}" },
+
+      "ring": { "value": "{color.base.indigo.600}" },
+      "ring-offset": { "value": "oklch(99% 0 0)" },
+
+      "selected": { "value": "{color.base.indigo.300}" },
+      "selected-foreground": { "value": "oklch(28% 0.1 275)" },
+
+      "panel-hover": { "value": "{color.base.slate.100}" },
+      "panel-active": { "value": "{color.base.indigo.100}" },
+
+      "tab-inactive": { "value": "transparent" },
+      "tab-inactive-hover": { "value": "{color.base.slate.100}" },
+      "tab-active": { "value": "{color.base.white}" },
+      "tab-border": { "value": "{color.base.slate.200}" },
+
+      "neutral": { "value": "{color.base.slate.200}" },
+      "neutral-hover": { "value": "{color.base.slate.300}" },
+      "neutral-active": { "value": "{color.base.slate.400}" },
+      "neutral-foreground": { "value": "{color.base.slate.500}" },
+      "neutral-foreground-hover": { "value": "{color.base.slate.600}" },
+
+      "handle": { "value": "transparent" },
+      "handle-hover": { "value": "{color.base.slate.100}" },
+      "handle-active": { "value": "{color.base.indigo.100}" },
+      "handle-foreground": { "value": "{color.base.slate.400}" },
+      "handle-foreground-hover": { "value": "{color.base.slate.500}" },
+      "handle-foreground-active": { "value": "{color.base.indigo.600}" },
+
+      "drop-indicator": { "value": "{color.base.indigo.500}" },
+      "drop-indicator-bg": { "value": "oklch(52% 0.18 275 / 0.15)" },
+
+      "divider": { "value": "{color.base.slate.300}" },
+      "divider-hover": { "value": "{color.base.indigo.400}" },
+      "divider-active": { "value": "{color.base.indigo.500}" },
+
+      "tree-hover": { "value": "oklch(96% 0.015 275)" },
+      "tree-active": { "value": "oklch(93% 0.03 275)" },
+      "tree-focus": { "value": "oklch(94% 0.04 275)" },
+
+      "header-from": { "value": "{color.base.slate.600}" },
+      "header-to": { "value": "oklch(28% 0.15 275)" },
+
+      "folder": { "value": "{color.base.folder.closed}" },
+      "folder-open": { "value": "{color.base.folder.open}" },
+
+      "scrollbar-thumb": { "value": "{color.base.indigo.400}" },
+      "scrollbar-thumb-hover": { "value": "{color.base.indigo.500}" },
+      "selection": { "value": "oklch(52% 0.18 275 / 25%)" },
+
+      "glow-primary": { "value": "{color.base.indigo.600}" },
+      "glow-accent": { "value": "{color.base.indigo.500}" },
+
+      "canvas": { "value": "{color.base.white}" },
+      "canvas-grid": { "value": "{color.base.slate.200}" },
+
+      "glass": { "value": "oklch(100% 0 0 / 85%)" },
+      "glass-subtle": { "value": "oklch(100% 0 0 / 65%)" },
+      "glass-dark": { "value": "oklch(20% 0.016 255 / 75%)" },
+
+      "fallback-canvas": { "value": "{color.base.white}" },
+      "fallback-background": { "value": "{color.base.white}" },
+      "fallback-color": { "value": "{color.base.black}" }
+    }
+  }
+}

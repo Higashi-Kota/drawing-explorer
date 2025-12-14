@@ -1,0 +1,17 @@
+{
+  "extends": "./frontend/packages/shared-config/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "composite": true,
+    "declarationMap": false
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./frontend/apps/web" },
+    { "path": "./frontend/packages/dock" },
+    { "path": "./frontend/packages/file-tree" },
+    { "path": "./frontend/packages/shared-config" }
+  ]
+}

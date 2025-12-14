@@ -1,0 +1,1 @@
+export { DockTabLabel } from "./DockTabLabel"

@@ -1,0 +1,35 @@
+{
+  "size": {
+    "icon": {
+      "xs": { "value": "12px" },
+      "sm": { "value": "16px" },
+      "md": { "value": "20px" },
+      "lg": { "value": "24px" },
+      "xl": { "value": "32px" }
+    },
+    "icon-btn": { "value": "24px" },
+    "touch": {
+      "min": { "value": "24px" },
+      "comfortable": { "value": "44px" }
+    },
+    "focus-ring": { "value": "2px" },
+    "focus-ring-offset": { "value": "4px" },
+    "header": {
+      "height": { "value": "40px" }
+    },
+    "sidebar": {
+      "width": { "value": "280px" },
+      "min-width": { "value": "200px" },
+      "max-width": { "value": "400px" }
+    },
+    "toolbar": {
+      "height": { "value": "40px" }
+    },
+    "panel": {
+      "tab-height": { "value": "36px" },
+      "min-width": { "value": "200px" },
+      "min-height": { "value": "150px" },
+      "min": { "value": "120px" }
+    }
+  }
+}

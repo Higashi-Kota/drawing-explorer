@@ -1,0 +1,21 @@
+/**
+ * NodeRenderer Component Styles
+ */
+
+.dock-container {
+  min-width: 0;
+  min-height: 0;
+}
+
+.dock-container-pane {
+  min-width: 0;
+  min-height: 0;
+
+  &[data-direction="horizontal"] {
+    min-width: var(--size-panel-min);
+  }
+
+  &[data-direction="vertical"] {
+    min-height: var(--size-panel-min);
+  }
+}

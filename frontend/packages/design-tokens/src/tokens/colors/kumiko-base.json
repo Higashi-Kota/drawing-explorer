@@ -1,0 +1,82 @@
+{
+  "color": {
+    "kumiko": {
+      "comment": "Kumiko Theme - Traditional Japanese wooden lattice (組子細工). Hinoki cypress, paulownia, geometric precision.",
+
+      "hinoki": {
+        "comment": "Hinoki cypress - pale golden wood with subtle warmth (hue ~70)",
+        "50": { "value": "oklch(98% 0.012 70)" },
+        "100": { "value": "oklch(96% 0.025 70)" },
+        "200": { "value": "oklch(93% 0.042 70)" },
+        "300": { "value": "oklch(88% 0.058 70)" },
+        "400": { "value": "oklch(82% 0.072 70)" },
+        "500": { "value": "oklch(75% 0.078 70)" },
+        "600": { "value": "oklch(65% 0.075 70)" },
+        "700": { "value": "oklch(55% 0.068 70)" },
+        "800": { "value": "oklch(45% 0.058 70)" },
+        "900": { "value": "oklch(35% 0.045 70)" },
+        "950": { "value": "oklch(25% 0.032 70)" }
+      },
+
+      "kiri": {
+        "comment": "Paulownia (kiri) wood - soft silvery-beige, lightweight elegance (hue ~50)",
+        "50": { "value": "oklch(97% 0.008 50)" },
+        "100": { "value": "oklch(95% 0.015 50)" },
+        "200": { "value": "oklch(91% 0.025 50)" },
+        "300": { "value": "oklch(85% 0.038 50)" },
+        "400": { "value": "oklch(78% 0.048 50)" },
+        "500": { "value": "oklch(70% 0.052 50)" },
+        "600": { "value": "oklch(60% 0.050 50)" },
+        "700": { "value": "oklch(50% 0.045 50)" },
+        "800": { "value": "oklch(40% 0.038 50)" },
+        "900": { "value": "oklch(30% 0.028 50)" },
+        "950": { "value": "oklch(22% 0.020 50)" }
+      },
+
+      "urushi": {
+        "comment": "Urushi lacquer accent - traditional reddish-brown lacquer (hue ~25)",
+        "50": { "value": "oklch(96% 0.018 25)" },
+        "100": { "value": "oklch(92% 0.038 25)" },
+        "200": { "value": "oklch(85% 0.068 25)" },
+        "300": { "value": "oklch(75% 0.098 25)" },
+        "400": { "value": "oklch(62% 0.118 25)" },
+        "500": { "value": "oklch(50% 0.125 25)" },
+        "600": { "value": "oklch(42% 0.115 25)" },
+        "700": { "value": "oklch(35% 0.098 25)" },
+        "800": { "value": "oklch(28% 0.078 25)" },
+        "900": { "value": "oklch(22% 0.058 25)" },
+        "950": { "value": "oklch(16% 0.038 25)" }
+      },
+
+      "tatami": {
+        "comment": "Tatami green - dried rush grass, muted sage (hue ~110)",
+        "50": { "value": "oklch(97% 0.012 110)" },
+        "100": { "value": "oklch(94% 0.025 110)" },
+        "200": { "value": "oklch(88% 0.045 110)" },
+        "300": { "value": "oklch(80% 0.062 110)" },
+        "400": { "value": "oklch(70% 0.075 110)" },
+        "500": { "value": "oklch(60% 0.078 110)" },
+        "600": { "value": "oklch(52% 0.072 110)" },
+        "700": { "value": "oklch(44% 0.062 110)" },
+        "800": { "value": "oklch(36% 0.050 110)" },
+        "900": { "value": "oklch(28% 0.038 110)" },
+        "950": { "value": "oklch(20% 0.025 110)" }
+      },
+
+      "sumi": {
+        "comment": "Sumi ink - warm charcoal with brown undertone (hue ~45)",
+        "50": { "value": "oklch(95% 0.008 45)" },
+        "100": { "value": "oklch(88% 0.012 45)" },
+        "200": { "value": "oklch(78% 0.015 45)" },
+        "300": { "value": "oklch(65% 0.018 45)" },
+        "400": { "value": "oklch(52% 0.020 45)" },
+        "500": { "value": "oklch(40% 0.022 45)" },
+        "600": { "value": "oklch(32% 0.020 45)" },
+        "700": { "value": "oklch(25% 0.018 45)" },
+        "800": { "value": "oklch(18% 0.015 45)" },
+        "900": { "value": "oklch(12% 0.012 45)" },
+        "950": { "value": "oklch(8% 0.008 45)" }
+      }
+    }
+  }
+}
