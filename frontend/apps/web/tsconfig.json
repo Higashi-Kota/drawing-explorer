@@ -1,0 +1,15 @@
+{
+  "extends": "../../packages/shared-config/tsconfig/tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@internal/dock": ["../../packages/dock/src/index.ts"],
+      "@internal/dock/*": ["../../packages/dock/src/*"],
+      "@internal/file-tree": ["../../packages/file-tree/src/index.ts"],
+      "@internal/file-tree/*": ["../../packages/file-tree/src/*"]
+    }
+  },
+  "include": ["src/**/*", "../../packages/dock/src/**/*", "../../packages/file-tree/src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}

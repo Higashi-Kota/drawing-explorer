@@ -1,0 +1,15 @@
+/**
+ * Dock Package Styles
+ *
+ * This file aggregates all component-specific styles.
+ * Import this file in your app's CSS to include all dock component styles.
+ */
+
+/* Shared utilities */
+@import "./utilities.css";
+
+/* Component styles */
+@import "../components/DockPanel/style.css";
+@import "../components/DockTabContainer/style.css";
+@import "../components/DockTabLabel/style.css";
+@import "../components/NodeRenderer/style.css";

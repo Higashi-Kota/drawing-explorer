@@ -1,0 +1,32 @@
+{
+  "name": "drawing-explorer",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean:modules": "find frontend -type d -name node_modules -prune -exec rm -rf {} +",
+    "clean:build": "find frontend -name '*.tsbuildinfo' -delete && find frontend -type d -name dist -exec rm -rf {} +",
+    "clean:all": "pnpm run clean:build && rm -rf dist node_modules pnpm-lock.yaml .tsbuildinfo && pnpm run clean:modules",
+    "build:prepare": "pnpm --filter '!./frontend/apps/web' -r --workspace-concurrency=4 build",
+    "dev:frontend": "pnpm --filter @internal/web dev",
+    "dev:backend": "pnpm --filter @internal/backend dev",
+    "build": "pnpm build:prepare && pnpm --filter @internal/web build",
+    "preview": "pnpm --filter @internal/web preview",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --fix --unsafe",
+    "format": "biome format . --write",
+    "package:check": "taze",
+    "package:update": "taze -w --install",
+    "storybook:dock": "pnpm --filter @internal/dock storybook",
+    "storybook:file-tree": "pnpm --filter @internal/file-tree storybook"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@rslib/core": "^0.18.4",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.0.1",
+    "taze": "^19.9.2",
+    "typescript": "^5.9.3"
+  }
+}

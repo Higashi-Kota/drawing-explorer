@@ -1,0 +1,39 @@
+/**
+ * DockTabLabel Component Styles
+ */
+
+.dock-tab-label {
+  background-color: var(--color-tab-inactive);
+  color: var(--color-muted-foreground);
+  border: var(--spacing-px) solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  transition: all var(--duration-fast) var(--easing-default);
+
+  &:hover {
+    background-color: var(--color-tab-inactive-hover);
+    color: var(--color-foreground);
+  }
+
+  &[data-active] {
+    background-color: var(--color-tab-active);
+    color: var(--color-foreground);
+    border-color: var(--color-tab-border);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: calc(-1 * var(--spacing-px));
+  }
+
+  &[data-drop-target] {
+    box-shadow: 0 0 0 var(--spacing-0_5) var(--color-primary);
+  }
+}
+
+.dock-tab-close {
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--easing-default);
+
+  .dock-tab-label:hover &,
+  .dock-tab-label:focus-within & {
+    opacity: 1;
+  }
+}

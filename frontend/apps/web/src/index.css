@@ -1,0 +1,7 @@
+@import "@internal/theme/index.css";
+
+@source "./components/**/*.tsx";
+@source "./App.tsx";
+@source "../../../packages/dock/src/**/*.tsx";
+@source "../../../packages/drawing/src/**/*.tsx";
+@source "../../../packages/file-tree/src/**/*.tsx";

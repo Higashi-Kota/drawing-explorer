@@ -1,0 +1,311 @@
+/**
+ * Theme Entry Point
+ *
+ * Design System: "Drawing Explorer"
+ * - Professional technical tool aesthetic
+ * - OKLCH color space for perceptual uniformity
+ */
+
+/* Google Fonts - Theme fonts
+ * Default: Inter - clean, modern, excellent readability
+ * Warm: Source Serif 4 - readable serif with modern clarity
+ * Kumiko: M PLUS 1p - modern Japanese gothic, excellent readability
+ * Nouveau: Raleway - elegant, Art Nouveau-inspired sans-serif
+ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500;600&family=M+PLUS+1p:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Raleway:wght@300;400;500;600;700&family=Source+Serif+4:wght@300;400;500;600;700&display=swap");
+
+/* Design tokens - generates @theme block with all CSS variables */
+@import "@internal/design-tokens/tailwind-theme.css";
+
+/* Theme switching overrides */
+@import "./themes.css";
+
+/* Dock component styles */
+@import "../dock/src/styles/index.css";
+
+/* File tree component styles */
+@import "../file-tree/src/styles/index.css";
+
+/* ===========================================
+  Tailwind font-sans override
+
+  Tailwind v4's `font-sans` class uses `--font-sans` variable.
+  Design tokens define `--font-family-sans`, so we map it here.
+  =========================================== */
+@theme inline {
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+}
+
+/* ===========================================
+  Base styles
+  =========================================== */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-lineheight-normal);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===========================================
+  Selection styles
+  =========================================== */
+::selection {
+  background-color: var(--color-selected);
+  color: var(--color-selected-foreground);
+}
+
+/* ===========================================
+  Scrollbar styling
+  =========================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: var(--radius-full);
+  transition: background var(--duration-fast) var(--easing-default);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================================
+  Focus visible styles
+  =========================================== */
+:focus-visible {
+  outline: none;
+}
+
+/* ===========================================
+  Keyframe Animations
+  =========================================== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fade-in var(--duration-normal) var(--easing-out);
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--duration-slow) var(--easing-out);
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale var(--duration-normal) var(--easing-spring);
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right var(--duration-normal) var(--easing-out);
+}
+
+.animate-slide-in-down {
+  animation: slide-in-down var(--duration-normal) var(--easing-out);
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s var(--easing-in-out) infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s var(--easing-default) infinite;
+  background-size: 200% 100%;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ===========================================
+  Glass morphism utilities
+  =========================================== */
+@utility glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+}
+
+@utility glass-subtle {
+  background: var(--color-glass-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+@utility glass-dark {
+  background: var(--color-glass-dark);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+}
+
+/* ===========================================
+  Surface utilities
+  =========================================== */
+@utility surface {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+}
+
+@utility surface-raised {
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+@utility surface-overlay {
+  background-color: var(--color-surface-overlay);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===========================================
+  Text Utilities
+  =========================================== */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Heading styles with tighter tracking */
+@utility heading {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-letterspacing-tight);
+  line-height: var(--font-lineheight-tight);
+}
+
+/* ===========================================
+  Reduced Motion
+  =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

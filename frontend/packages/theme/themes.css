@@ -1,0 +1,744 @@
+/**
+ * Theme Switching CSS
+ *
+ * Available themes:
+ *   <html data-theme="warm">    - Warm Tone - Sunset warmth, terracotta & amber
+ *   <html data-theme="kumiko">  - Kumiko - Japanese wooden lattice (組子細工)
+ *   <html data-theme="nouveau"> - Art Nouveau - Organic elegance, Mucha-inspired
+ *   <html data-theme="default"> - Default Professional theme
+ *   <html> (no attribute)       - Default theme
+ *
+ * Apply via JavaScript:
+ *   document.documentElement.dataset.theme = 'warm'
+ */
+
+/* ============================================
+  Base theme colors (applied to :root for default)
+  These provide the base semantic color mapping
+  ============================================ */
+
+:root {
+  --color-background: var(--color-semantic-background);
+  --color-background-subtle: var(--color-semantic-background-subtle);
+  --color-foreground: var(--color-semantic-foreground);
+  --color-foreground-muted: var(--color-semantic-foreground-muted);
+
+  --color-surface: var(--color-semantic-surface);
+  --color-surface-raised: var(--color-semantic-surface-raised);
+  --color-surface-overlay: var(--color-semantic-surface-overlay);
+
+  --color-muted: var(--color-semantic-muted);
+  --color-muted-foreground: var(--color-semantic-muted-foreground);
+
+  --color-card: var(--color-semantic-card);
+  --color-card-foreground: var(--color-semantic-card-foreground);
+  --color-popover: var(--color-semantic-popover);
+  --color-popover-foreground: var(--color-semantic-popover-foreground);
+
+  --color-primary: var(--color-semantic-primary);
+  --color-primary-foreground: var(--color-semantic-primary-foreground);
+  --color-primary-hover: var(--color-semantic-primary-hover);
+  --color-primary-muted: var(--color-semantic-primary-muted);
+
+  --color-secondary: var(--color-semantic-secondary);
+  --color-secondary-foreground: var(--color-semantic-secondary-foreground);
+  --color-secondary-hover: var(--color-semantic-secondary-hover);
+
+  --color-accent: var(--color-semantic-accent);
+  --color-accent-foreground: var(--color-semantic-accent-foreground);
+  --color-accent-hover: var(--color-semantic-accent-hover);
+  --color-accent-muted: var(--color-semantic-accent-muted);
+
+  --color-destructive: var(--color-semantic-destructive);
+  --color-destructive-foreground: var(--color-semantic-destructive-foreground);
+  --color-destructive-hover: var(--color-semantic-destructive-hover);
+  --color-destructive-muted: var(--color-semantic-destructive-muted);
+
+  --color-success: var(--color-semantic-success);
+  --color-success-foreground: var(--color-semantic-success-foreground);
+  --color-success-muted: var(--color-semantic-success-muted);
+
+  --color-warning: var(--color-semantic-warning);
+  --color-warning-foreground: var(--color-semantic-warning-foreground);
+  --color-warning-muted: var(--color-semantic-warning-muted);
+
+  --color-info: var(--color-semantic-info);
+  --color-info-foreground: var(--color-semantic-info-foreground);
+  --color-info-muted: var(--color-semantic-info-muted);
+
+  --color-border: var(--color-semantic-border);
+  --color-border-subtle: var(--color-semantic-border-subtle);
+  --color-border-strong: var(--color-semantic-border-strong);
+  --color-input: var(--color-semantic-input);
+  --color-input-focus: var(--color-semantic-input-focus);
+
+  --color-ring: var(--color-semantic-ring);
+  --color-ring-offset: var(--color-semantic-ring-offset);
+
+  --color-selected: var(--color-semantic-selected);
+  --color-selected-foreground: var(--color-semantic-selected-foreground);
+
+  --color-panel-hover: var(--color-semantic-panel-hover);
+  --color-panel-active: var(--color-semantic-panel-active);
+
+  --color-tab-inactive: var(--color-semantic-tab-inactive);
+  --color-tab-inactive-hover: var(--color-semantic-tab-inactive-hover);
+  --color-tab-active: var(--color-semantic-tab-active);
+  --color-tab-border: var(--color-semantic-tab-border);
+
+  --color-neutral: var(--color-semantic-neutral);
+  --color-neutral-hover: var(--color-semantic-neutral-hover);
+  --color-neutral-active: var(--color-semantic-neutral-active);
+  --color-neutral-foreground: var(--color-semantic-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-semantic-neutral-foreground-hover);
+
+  --color-handle: var(--color-semantic-handle);
+  --color-handle-hover: var(--color-semantic-handle-hover);
+  --color-handle-active: var(--color-semantic-handle-active);
+  --color-handle-foreground: var(--color-semantic-handle-foreground);
+  --color-handle-foreground-hover: var(--color-semantic-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-semantic-handle-foreground-active);
+
+  --color-drop-indicator: var(--color-semantic-drop-indicator);
+  --color-drop-indicator-bg: var(--color-semantic-drop-indicator-bg);
+
+  --color-divider: var(--color-semantic-divider);
+  --color-divider-hover: var(--color-semantic-divider-hover);
+  --color-divider-active: var(--color-semantic-divider-active);
+
+  --color-tree-hover: var(--color-semantic-tree-hover);
+  --color-tree-active: var(--color-semantic-tree-active);
+  --color-tree-focus: var(--color-semantic-tree-focus);
+
+  --color-header-from: var(--color-semantic-header-from);
+  --color-header-to: var(--color-semantic-header-to);
+
+  --color-folder: var(--color-semantic-folder);
+  --color-folder-open: var(--color-semantic-folder-open);
+
+  --color-scrollbar-thumb: var(--color-semantic-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-semantic-scrollbar-thumb-hover);
+  --color-selection: var(--color-semantic-selection);
+
+  --color-glow-primary: var(--color-semantic-glow-primary);
+  --color-glow-accent: var(--color-semantic-glow-accent);
+
+  --color-canvas: var(--color-semantic-canvas);
+  --color-canvas-grid: var(--color-semantic-canvas-grid);
+
+  --color-glass: var(--color-semantic-glass);
+  --color-glass-subtle: var(--color-semantic-glass-subtle);
+  --color-glass-dark: var(--color-semantic-glass-dark);
+
+  /* Typography - Inter: clean, modern, professional with excellent readability */
+  --font-family-sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-family-display: "Inter", system-ui, sans-serif;
+}
+
+/* ============================================
+  Default Theme (Professional Indigo)
+  Uses the semantic tokens from :root directly
+  ============================================ */
+
+[data-theme="default"],
+.theme-default {
+  --color-background: var(--color-semantic-background);
+  --color-background-subtle: var(--color-semantic-background-subtle);
+  --color-foreground: var(--color-semantic-foreground);
+  --color-foreground-muted: var(--color-semantic-foreground-muted);
+
+  --color-surface: var(--color-semantic-surface);
+  --color-surface-raised: var(--color-semantic-surface-raised);
+  --color-surface-overlay: var(--color-semantic-surface-overlay);
+
+  --color-muted: var(--color-semantic-muted);
+  --color-muted-foreground: var(--color-semantic-muted-foreground);
+
+  --color-card: var(--color-semantic-card);
+  --color-card-foreground: var(--color-semantic-card-foreground);
+  --color-popover: var(--color-semantic-popover);
+  --color-popover-foreground: var(--color-semantic-popover-foreground);
+
+  --color-primary: var(--color-semantic-primary);
+  --color-primary-foreground: var(--color-semantic-primary-foreground);
+  --color-primary-hover: var(--color-semantic-primary-hover);
+  --color-primary-muted: var(--color-semantic-primary-muted);
+
+  --color-secondary: var(--color-semantic-secondary);
+  --color-secondary-foreground: var(--color-semantic-secondary-foreground);
+  --color-secondary-hover: var(--color-semantic-secondary-hover);
+
+  --color-accent: var(--color-semantic-accent);
+  --color-accent-foreground: var(--color-semantic-accent-foreground);
+  --color-accent-hover: var(--color-semantic-accent-hover);
+  --color-accent-muted: var(--color-semantic-accent-muted);
+
+  --color-destructive: var(--color-semantic-destructive);
+  --color-destructive-foreground: var(--color-semantic-destructive-foreground);
+  --color-destructive-hover: var(--color-semantic-destructive-hover);
+  --color-destructive-muted: var(--color-semantic-destructive-muted);
+
+  --color-success: var(--color-semantic-success);
+  --color-success-foreground: var(--color-semantic-success-foreground);
+  --color-success-muted: var(--color-semantic-success-muted);
+
+  --color-warning: var(--color-semantic-warning);
+  --color-warning-foreground: var(--color-semantic-warning-foreground);
+  --color-warning-muted: var(--color-semantic-warning-muted);
+
+  --color-info: var(--color-semantic-info);
+  --color-info-foreground: var(--color-semantic-info-foreground);
+  --color-info-muted: var(--color-semantic-info-muted);
+
+  --color-border: var(--color-semantic-border);
+  --color-border-subtle: var(--color-semantic-border-subtle);
+  --color-border-strong: var(--color-semantic-border-strong);
+  --color-input: var(--color-semantic-input);
+  --color-input-focus: var(--color-semantic-input-focus);
+
+  --color-ring: var(--color-semantic-ring);
+  --color-ring-offset: var(--color-semantic-ring-offset);
+
+  --color-selected: var(--color-semantic-selected);
+  --color-selected-foreground: var(--color-semantic-selected-foreground);
+
+  --color-panel-hover: var(--color-semantic-panel-hover);
+  --color-panel-active: var(--color-semantic-panel-active);
+
+  --color-tab-inactive: var(--color-semantic-tab-inactive);
+  --color-tab-inactive-hover: var(--color-semantic-tab-inactive-hover);
+  --color-tab-active: var(--color-semantic-tab-active);
+  --color-tab-border: var(--color-semantic-tab-border);
+
+  --color-neutral: var(--color-semantic-neutral);
+  --color-neutral-hover: var(--color-semantic-neutral-hover);
+  --color-neutral-active: var(--color-semantic-neutral-active);
+  --color-neutral-foreground: var(--color-semantic-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-semantic-neutral-foreground-hover);
+
+  --color-handle: var(--color-semantic-handle);
+  --color-handle-hover: var(--color-semantic-handle-hover);
+  --color-handle-active: var(--color-semantic-handle-active);
+  --color-handle-foreground: var(--color-semantic-handle-foreground);
+  --color-handle-foreground-hover: var(--color-semantic-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-semantic-handle-foreground-active);
+
+  --color-drop-indicator: var(--color-semantic-drop-indicator);
+  --color-drop-indicator-bg: var(--color-semantic-drop-indicator-bg);
+
+  --color-divider: var(--color-semantic-divider);
+  --color-divider-hover: var(--color-semantic-divider-hover);
+  --color-divider-active: var(--color-semantic-divider-active);
+
+  --color-tree-hover: var(--color-semantic-tree-hover);
+  --color-tree-active: var(--color-semantic-tree-active);
+  --color-tree-focus: var(--color-semantic-tree-focus);
+
+  --color-header-from: var(--color-semantic-header-from);
+  --color-header-to: var(--color-semantic-header-to);
+
+  --color-folder: var(--color-semantic-folder);
+  --color-folder-open: var(--color-semantic-folder-open);
+
+  --color-scrollbar-thumb: var(--color-semantic-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-semantic-scrollbar-thumb-hover);
+  --color-selection: var(--color-semantic-selection);
+
+  --color-glow-primary: var(--color-semantic-glow-primary);
+  --color-glow-accent: var(--color-semantic-glow-accent);
+
+  --color-canvas: var(--color-semantic-canvas);
+  --color-canvas-grid: var(--color-semantic-canvas-grid);
+
+  --color-glass: var(--color-semantic-glass);
+  --color-glass-subtle: var(--color-semantic-glass-subtle);
+  --color-glass-dark: var(--color-semantic-glass-dark);
+
+  /* Typography - Inter: clean, modern, professional */
+  --font-family-sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-family-display: "Inter", system-ui, sans-serif;
+}
+
+/* ============================================
+  Warm Tone Theme - 暖色調
+  Activated by: [data-theme="warm"] or .theme-warm
+  ============================================ */
+
+[data-theme="warm"],
+.theme-warm {
+  --color-background: var(--color-warm-semantic-background);
+  --color-background-subtle: var(--color-warm-semantic-background-subtle);
+  --color-foreground: var(--color-warm-semantic-foreground);
+  --color-foreground-muted: var(--color-warm-semantic-foreground-muted);
+
+  --color-surface: var(--color-warm-semantic-surface);
+  --color-surface-raised: var(--color-warm-semantic-surface-raised);
+  --color-surface-overlay: var(--color-warm-semantic-surface-overlay);
+
+  --color-muted: var(--color-warm-semantic-muted);
+  --color-muted-foreground: var(--color-warm-semantic-muted-foreground);
+
+  --color-card: var(--color-warm-semantic-card);
+  --color-card-foreground: var(--color-warm-semantic-card-foreground);
+  --color-popover: var(--color-warm-semantic-popover);
+  --color-popover-foreground: var(--color-warm-semantic-popover-foreground);
+
+  --color-primary: var(--color-warm-semantic-primary);
+  --color-primary-foreground: var(--color-warm-semantic-primary-foreground);
+  --color-primary-hover: var(--color-warm-semantic-primary-hover);
+  --color-primary-muted: var(--color-warm-semantic-primary-muted);
+
+  --color-secondary: var(--color-warm-semantic-secondary);
+  --color-secondary-foreground: var(--color-warm-semantic-secondary-foreground);
+  --color-secondary-hover: var(--color-warm-semantic-secondary-hover);
+
+  --color-accent: var(--color-warm-semantic-accent);
+  --color-accent-foreground: var(--color-warm-semantic-accent-foreground);
+  --color-accent-hover: var(--color-warm-semantic-accent-hover);
+  --color-accent-muted: var(--color-warm-semantic-accent-muted);
+
+  --color-destructive: var(--color-warm-semantic-destructive);
+  --color-destructive-foreground: var(--color-warm-semantic-destructive-foreground);
+  --color-destructive-hover: var(--color-warm-semantic-destructive-hover);
+  --color-destructive-muted: var(--color-warm-semantic-destructive-muted);
+
+  --color-success: var(--color-warm-semantic-success);
+  --color-success-foreground: var(--color-warm-semantic-success-foreground);
+  --color-success-muted: var(--color-warm-semantic-success-muted);
+
+  --color-warning: var(--color-warm-semantic-warning);
+  --color-warning-foreground: var(--color-warm-semantic-warning-foreground);
+  --color-warning-muted: var(--color-warm-semantic-warning-muted);
+
+  --color-info: var(--color-warm-semantic-info);
+  --color-info-foreground: var(--color-warm-semantic-info-foreground);
+  --color-info-muted: var(--color-warm-semantic-info-muted);
+
+  --color-border: var(--color-warm-semantic-border);
+  --color-border-subtle: var(--color-warm-semantic-border-subtle);
+  --color-border-strong: var(--color-warm-semantic-border-strong);
+  --color-input: var(--color-warm-semantic-input);
+  --color-input-focus: var(--color-warm-semantic-input-focus);
+
+  --color-ring: var(--color-warm-semantic-ring);
+  --color-ring-offset: var(--color-warm-semantic-ring-offset);
+
+  --color-selected: var(--color-warm-semantic-selected);
+  --color-selected-foreground: var(--color-warm-semantic-selected-foreground);
+
+  --color-panel-hover: var(--color-warm-semantic-panel-hover);
+  --color-panel-active: var(--color-warm-semantic-panel-active);
+
+  --color-tab-inactive: var(--color-warm-semantic-tab-inactive);
+  --color-tab-inactive-hover: var(--color-warm-semantic-tab-inactive-hover);
+  --color-tab-active: var(--color-warm-semantic-tab-active);
+  --color-tab-border: var(--color-warm-semantic-tab-border);
+
+  --color-neutral: var(--color-warm-semantic-neutral);
+  --color-neutral-hover: var(--color-warm-semantic-neutral-hover);
+  --color-neutral-active: var(--color-warm-semantic-neutral-active);
+  --color-neutral-foreground: var(--color-warm-semantic-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-warm-semantic-neutral-foreground-hover);
+
+  --color-handle: var(--color-warm-semantic-handle);
+  --color-handle-hover: var(--color-warm-semantic-handle-hover);
+  --color-handle-active: var(--color-warm-semantic-handle-active);
+  --color-handle-foreground: var(--color-warm-semantic-handle-foreground);
+  --color-handle-foreground-hover: var(--color-warm-semantic-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-warm-semantic-handle-foreground-active);
+
+  --color-drop-indicator: var(--color-warm-semantic-drop-indicator);
+  --color-drop-indicator-bg: var(--color-warm-semantic-drop-indicator-bg);
+
+  --color-divider: var(--color-warm-semantic-divider);
+  --color-divider-hover: var(--color-warm-semantic-divider-hover);
+  --color-divider-active: var(--color-warm-semantic-divider-active);
+
+  --color-scrollbar-thumb: var(--color-warm-semantic-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-warm-semantic-scrollbar-thumb-hover);
+
+  --color-glow-primary: var(--color-warm-semantic-glow-primary);
+  --color-glow-accent: var(--color-warm-semantic-glow-accent);
+
+  /* Typography - Source Serif 4: readable warm serif with modern clarity */
+  --font-family-sans: "Source Serif 4", "Noto Serif JP", Georgia, serif;
+  --font-family-display: "Source Serif 4", Georgia, serif;
+
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+[data-theme="warm"] ::selection,
+.theme-warm ::selection {
+  background-color: var(--color-warm-semantic-selected);
+  color: var(--color-warm-semantic-selected-foreground);
+}
+
+/* ============================================
+  Kumiko Theme - 組子細工調 (Japanese Wooden Lattice)
+  Activated by: [data-theme="kumiko"] or .theme-kumiko
+  ============================================ */
+
+[data-theme="kumiko"],
+.theme-kumiko {
+  --color-background: var(--color-kumiko-semantic-background);
+  --color-background-subtle: var(--color-kumiko-semantic-background-subtle);
+  --color-foreground: var(--color-kumiko-semantic-foreground);
+  --color-foreground-muted: var(--color-kumiko-semantic-foreground-muted);
+
+  --color-surface: var(--color-kumiko-semantic-surface);
+  --color-surface-raised: var(--color-kumiko-semantic-surface-raised);
+  --color-surface-overlay: var(--color-kumiko-semantic-surface-overlay);
+
+  --color-muted: var(--color-kumiko-semantic-muted);
+  --color-muted-foreground: var(--color-kumiko-semantic-muted-foreground);
+
+  --color-card: var(--color-kumiko-semantic-card);
+  --color-card-foreground: var(--color-kumiko-semantic-card-foreground);
+  --color-popover: var(--color-kumiko-semantic-popover);
+  --color-popover-foreground: var(--color-kumiko-semantic-popover-foreground);
+
+  --color-primary: var(--color-kumiko-semantic-primary);
+  --color-primary-foreground: var(--color-kumiko-semantic-primary-foreground);
+  --color-primary-hover: var(--color-kumiko-semantic-primary-hover);
+  --color-primary-muted: var(--color-kumiko-semantic-primary-muted);
+
+  --color-secondary: var(--color-kumiko-semantic-secondary);
+  --color-secondary-foreground: var(--color-kumiko-semantic-secondary-foreground);
+  --color-secondary-hover: var(--color-kumiko-semantic-secondary-hover);
+
+  --color-accent: var(--color-kumiko-semantic-accent);
+  --color-accent-foreground: var(--color-kumiko-semantic-accent-foreground);
+  --color-accent-hover: var(--color-kumiko-semantic-accent-hover);
+  --color-accent-muted: var(--color-kumiko-semantic-accent-muted);
+
+  --color-destructive: var(--color-kumiko-semantic-destructive);
+  --color-destructive-foreground: var(--color-kumiko-semantic-destructive-foreground);
+  --color-destructive-hover: var(--color-kumiko-semantic-destructive-hover);
+  --color-destructive-muted: var(--color-kumiko-semantic-destructive-muted);
+
+  --color-success: var(--color-kumiko-semantic-success);
+  --color-success-foreground: var(--color-kumiko-semantic-success-foreground);
+  --color-success-muted: var(--color-kumiko-semantic-success-muted);
+
+  --color-warning: var(--color-kumiko-semantic-warning);
+  --color-warning-foreground: var(--color-kumiko-semantic-warning-foreground);
+  --color-warning-muted: var(--color-kumiko-semantic-warning-muted);
+
+  --color-info: var(--color-kumiko-semantic-info);
+  --color-info-foreground: var(--color-kumiko-semantic-info-foreground);
+  --color-info-muted: var(--color-kumiko-semantic-info-muted);
+
+  --color-border: var(--color-kumiko-semantic-border);
+  --color-border-subtle: var(--color-kumiko-semantic-border-subtle);
+  --color-border-strong: var(--color-kumiko-semantic-border-strong);
+  --color-input: var(--color-kumiko-semantic-input);
+  --color-input-focus: var(--color-kumiko-semantic-input-focus);
+
+  --color-ring: var(--color-kumiko-semantic-ring);
+  --color-ring-offset: var(--color-kumiko-semantic-ring-offset);
+
+  --color-selected: var(--color-kumiko-semantic-selected);
+  --color-selected-foreground: var(--color-kumiko-semantic-selected-foreground);
+
+  --color-panel-hover: var(--color-kumiko-semantic-panel-hover);
+  --color-panel-active: var(--color-kumiko-semantic-panel-active);
+
+  --color-tab-inactive: var(--color-kumiko-semantic-tab-inactive);
+  --color-tab-inactive-hover: var(--color-kumiko-semantic-tab-inactive-hover);
+  --color-tab-active: var(--color-kumiko-semantic-tab-active);
+  --color-tab-border: var(--color-kumiko-semantic-tab-border);
+
+  --color-neutral: var(--color-kumiko-semantic-neutral);
+  --color-neutral-hover: var(--color-kumiko-semantic-neutral-hover);
+  --color-neutral-active: var(--color-kumiko-semantic-neutral-active);
+  --color-neutral-foreground: var(--color-kumiko-semantic-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-kumiko-semantic-neutral-foreground-hover);
+
+  --color-handle: var(--color-kumiko-semantic-handle);
+  --color-handle-hover: var(--color-kumiko-semantic-handle-hover);
+  --color-handle-active: var(--color-kumiko-semantic-handle-active);
+  --color-handle-foreground: var(--color-kumiko-semantic-handle-foreground);
+  --color-handle-foreground-hover: var(--color-kumiko-semantic-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-kumiko-semantic-handle-foreground-active);
+
+  --color-drop-indicator: var(--color-kumiko-semantic-drop-indicator);
+  --color-drop-indicator-bg: var(--color-kumiko-semantic-drop-indicator-bg);
+
+  --color-divider: var(--color-kumiko-semantic-divider);
+  --color-divider-hover: var(--color-kumiko-semantic-divider-hover);
+  --color-divider-active: var(--color-kumiko-semantic-divider-active);
+
+  --color-scrollbar-thumb: var(--color-kumiko-semantic-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-kumiko-semantic-scrollbar-thumb-hover);
+
+  --color-glow-primary: var(--color-kumiko-semantic-glow-primary);
+  --color-glow-accent: var(--color-kumiko-semantic-glow-accent);
+
+  /* Typography - M PLUS 1p: modern Japanese gothic with excellent readability */
+  --font-family-sans: "M PLUS 1p", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-family-display: "M PLUS 1p", "Hiragino Kaku Gothic ProN", sans-serif;
+
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+[data-theme="kumiko"] ::selection,
+.theme-kumiko ::selection {
+  background-color: var(--color-kumiko-semantic-selected);
+  color: var(--color-kumiko-semantic-selected-foreground);
+}
+
+/* ============================================
+  Art Nouveau Theme - アールヌーヴォー調
+  Activated by: [data-theme="nouveau"] or .theme-nouveau
+  ============================================ */
+
+[data-theme="nouveau"],
+.theme-nouveau {
+  --color-background: var(--color-nouveau-semantic-background);
+  --color-background-subtle: var(--color-nouveau-semantic-background-subtle);
+  --color-foreground: var(--color-nouveau-semantic-foreground);
+  --color-foreground-muted: var(--color-nouveau-semantic-foreground-muted);
+
+  --color-surface: var(--color-nouveau-semantic-surface);
+  --color-surface-raised: var(--color-nouveau-semantic-surface-raised);
+  --color-surface-overlay: var(--color-nouveau-semantic-surface-overlay);
+
+  --color-muted: var(--color-nouveau-semantic-muted);
+  --color-muted-foreground: var(--color-nouveau-semantic-muted-foreground);
+
+  --color-card: var(--color-nouveau-semantic-card);
+  --color-card-foreground: var(--color-nouveau-semantic-card-foreground);
+  --color-popover: var(--color-nouveau-semantic-popover);
+  --color-popover-foreground: var(--color-nouveau-semantic-popover-foreground);
+
+  --color-primary: var(--color-nouveau-semantic-primary);
+  --color-primary-foreground: var(--color-nouveau-semantic-primary-foreground);
+  --color-primary-hover: var(--color-nouveau-semantic-primary-hover);
+  --color-primary-muted: var(--color-nouveau-semantic-primary-muted);
+
+  --color-secondary: var(--color-nouveau-semantic-secondary);
+  --color-secondary-foreground: var(--color-nouveau-semantic-secondary-foreground);
+  --color-secondary-hover: var(--color-nouveau-semantic-secondary-hover);
+
+  --color-accent: var(--color-nouveau-semantic-accent);
+  --color-accent-foreground: var(--color-nouveau-semantic-accent-foreground);
+  --color-accent-hover: var(--color-nouveau-semantic-accent-hover);
+  --color-accent-muted: var(--color-nouveau-semantic-accent-muted);
+
+  --color-destructive: var(--color-nouveau-semantic-destructive);
+  --color-destructive-foreground: var(--color-nouveau-semantic-destructive-foreground);
+  --color-destructive-hover: var(--color-nouveau-semantic-destructive-hover);
+  --color-destructive-muted: var(--color-nouveau-semantic-destructive-muted);
+
+  --color-success: var(--color-nouveau-semantic-success);
+  --color-success-foreground: var(--color-nouveau-semantic-success-foreground);
+  --color-success-muted: var(--color-nouveau-semantic-success-muted);
+
+  --color-warning: var(--color-nouveau-semantic-warning);
+  --color-warning-foreground: var(--color-nouveau-semantic-warning-foreground);
+  --color-warning-muted: var(--color-nouveau-semantic-warning-muted);
+
+  --color-info: var(--color-nouveau-semantic-info);
+  --color-info-foreground: var(--color-nouveau-semantic-info-foreground);
+  --color-info-muted: var(--color-nouveau-semantic-info-muted);
+
+  --color-border: var(--color-nouveau-semantic-border);
+  --color-border-subtle: var(--color-nouveau-semantic-border-subtle);
+  --color-border-strong: var(--color-nouveau-semantic-border-strong);
+  --color-input: var(--color-nouveau-semantic-input);
+  --color-input-focus: var(--color-nouveau-semantic-input-focus);
+
+  --color-ring: var(--color-nouveau-semantic-ring);
+  --color-ring-offset: var(--color-nouveau-semantic-ring-offset);
+
+  --color-selected: var(--color-nouveau-semantic-selected);
+  --color-selected-foreground: var(--color-nouveau-semantic-selected-foreground);
+
+  --color-panel-hover: var(--color-nouveau-semantic-panel-hover);
+  --color-panel-active: var(--color-nouveau-semantic-panel-active);
+
+  --color-tab-inactive: var(--color-nouveau-semantic-tab-inactive);
+  --color-tab-inactive-hover: var(--color-nouveau-semantic-tab-inactive-hover);
+  --color-tab-active: var(--color-nouveau-semantic-tab-active);
+  --color-tab-border: var(--color-nouveau-semantic-tab-border);
+
+  --color-neutral: var(--color-nouveau-semantic-neutral);
+  --color-neutral-hover: var(--color-nouveau-semantic-neutral-hover);
+  --color-neutral-active: var(--color-nouveau-semantic-neutral-active);
+  --color-neutral-foreground: var(--color-nouveau-semantic-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-nouveau-semantic-neutral-foreground-hover);
+
+  --color-handle: var(--color-nouveau-semantic-handle);
+  --color-handle-hover: var(--color-nouveau-semantic-handle-hover);
+  --color-handle-active: var(--color-nouveau-semantic-handle-active);
+  --color-handle-foreground: var(--color-nouveau-semantic-handle-foreground);
+  --color-handle-foreground-hover: var(--color-nouveau-semantic-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-nouveau-semantic-handle-foreground-active);
+
+  --color-drop-indicator: var(--color-nouveau-semantic-drop-indicator);
+  --color-drop-indicator-bg: var(--color-nouveau-semantic-drop-indicator-bg);
+
+  --color-divider: var(--color-nouveau-semantic-divider);
+  --color-divider-hover: var(--color-nouveau-semantic-divider-hover);
+  --color-divider-active: var(--color-nouveau-semantic-divider-active);
+
+  --color-scrollbar-thumb: var(--color-nouveau-semantic-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-nouveau-semantic-scrollbar-thumb-hover);
+
+  --color-glow-primary: var(--color-nouveau-semantic-glow-primary);
+  --color-glow-accent: var(--color-nouveau-semantic-glow-accent);
+
+  /* Typography - Raleway: elegant Art Nouveau-inspired sans-serif with excellent readability */
+  --font-family-sans: "Raleway", "Noto Sans JP", system-ui, sans-serif;
+  --font-family-display: "Raleway", system-ui, sans-serif;
+
+  scrollbar-color: var(--color-scrollbar-thumb) transparent;
+}
+
+[data-theme="nouveau"] ::selection,
+.theme-nouveau ::selection {
+  background-color: var(--color-nouveau-semantic-selected);
+  color: var(--color-nouveau-semantic-selected-foreground);
+}
+
+/* ============================================
+  Tailwind v4 Theme Registration
+
+  Register CSS custom properties for Tailwind utility generation.
+  These reference the theme-switched variables from :root and data-theme selectors,
+  enabling dynamic theme switching while maintaining Tailwind class support.
+  ============================================ */
+@theme {
+  /* Border colors */
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-strong: var(--color-border-strong);
+
+  /* Selection state colors */
+  --color-selected: var(--color-selected);
+  --color-selected-foreground: var(--color-selected-foreground);
+
+  /* Surface colors */
+  --color-background: var(--color-background);
+  --color-background-subtle: var(--color-background-subtle);
+  --color-foreground: var(--color-foreground);
+  --color-foreground-muted: var(--color-foreground-muted);
+
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-surface-overlay: var(--color-surface-overlay);
+
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+  --color-popover: var(--color-popover);
+  --color-popover-foreground: var(--color-popover-foreground);
+
+  /* Primary colors */
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-muted: var(--color-primary-muted);
+
+  /* Secondary colors */
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-secondary-hover: var(--color-secondary-hover);
+
+  /* Accent colors */
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-muted: var(--color-accent-muted);
+
+  /* Status colors */
+  --color-destructive: var(--color-destructive);
+  --color-destructive-foreground: var(--color-destructive-foreground);
+  --color-destructive-hover: var(--color-destructive-hover);
+  --color-destructive-muted: var(--color-destructive-muted);
+
+  --color-success: var(--color-success);
+  --color-success-foreground: var(--color-success-foreground);
+  --color-success-muted: var(--color-success-muted);
+
+  --color-warning: var(--color-warning);
+  --color-warning-foreground: var(--color-warning-foreground);
+  --color-warning-muted: var(--color-warning-muted);
+
+  --color-info: var(--color-info);
+  --color-info-foreground: var(--color-info-foreground);
+  --color-info-muted: var(--color-info-muted);
+
+  /* Input colors */
+  --color-input: var(--color-input);
+  --color-input-focus: var(--color-input-focus);
+  --color-ring: var(--color-ring);
+  --color-ring-offset: var(--color-ring-offset);
+
+  /* Panel colors */
+  --color-panel-hover: var(--color-panel-hover);
+  --color-panel-active: var(--color-panel-active);
+
+  /* Tab colors */
+  --color-tab-inactive: var(--color-tab-inactive);
+  --color-tab-inactive-hover: var(--color-tab-inactive-hover);
+  --color-tab-active: var(--color-tab-active);
+  --color-tab-border: var(--color-tab-border);
+
+  /* Neutral colors */
+  --color-neutral: var(--color-neutral);
+  --color-neutral-hover: var(--color-neutral-hover);
+  --color-neutral-active: var(--color-neutral-active);
+  --color-neutral-foreground: var(--color-neutral-foreground);
+  --color-neutral-foreground-hover: var(--color-neutral-foreground-hover);
+
+  /* Handle colors */
+  --color-handle: var(--color-handle);
+  --color-handle-hover: var(--color-handle-hover);
+  --color-handle-active: var(--color-handle-active);
+  --color-handle-foreground: var(--color-handle-foreground);
+  --color-handle-foreground-hover: var(--color-handle-foreground-hover);
+  --color-handle-foreground-active: var(--color-handle-foreground-active);
+
+  /* Drop indicator colors */
+  --color-drop-indicator: var(--color-drop-indicator);
+  --color-drop-indicator-bg: var(--color-drop-indicator-bg);
+
+  /* Divider colors */
+  --color-divider: var(--color-divider);
+  --color-divider-hover: var(--color-divider-hover);
+  --color-divider-active: var(--color-divider-active);
+
+  /* Tree colors */
+  --color-tree-hover: var(--color-tree-hover);
+  --color-tree-active: var(--color-tree-active);
+  --color-tree-focus: var(--color-tree-focus);
+
+  /* Header gradient */
+  --color-header-from: var(--color-header-from);
+  --color-header-to: var(--color-header-to);
+
+  /* Folder colors */
+  --color-folder: var(--color-folder);
+  --color-folder-open: var(--color-folder-open);
+
+  /* Scrollbar colors */
+  --color-scrollbar-thumb: var(--color-scrollbar-thumb);
+  --color-scrollbar-thumb-hover: var(--color-scrollbar-thumb-hover);
+  --color-selection: var(--color-selection);
+
+  /* Glow effects */
+  --color-glow-primary: var(--color-glow-primary);
+  --color-glow-accent: var(--color-glow-accent);
+
+  /* Canvas colors */
+  --color-canvas: var(--color-canvas);
+  --color-canvas-grid: var(--color-canvas-grid);
+
+  /* Glass effects */
+  --color-glass: var(--color-glass);
+  --color-glass-subtle: var(--color-glass-subtle);
+  --color-glass-dark: var(--color-glass-dark);
+}

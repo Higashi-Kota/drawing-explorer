@@ -1,0 +1,94 @@
+{
+  "color": {
+    "base": {
+      "white": { "value": "oklch(100% 0 0)" },
+      "black": { "value": "oklch(0% 0 0)" },
+      "slate": {
+        "comment": "Cool neutral with subtle blue undertone (hue ~260)",
+        "50": { "value": "oklch(98.5% 0.002 260)" },
+        "100": { "value": "oklch(96% 0.004 260)" },
+        "200": { "value": "oklch(93% 0.005 260)" },
+        "300": { "value": "oklch(90% 0.005 260)" },
+        "400": { "value": "oklch(75% 0.01 260)" },
+        "500": { "value": "oklch(50% 0.01 260)" },
+        "600": { "value": "oklch(35% 0.015 260)" },
+        "700": { "value": "oklch(28% 0.015 260)" },
+        "800": { "value": "oklch(22% 0.01 260)" },
+        "900": { "value": "oklch(18% 0.01 260)" },
+        "950": { "value": "oklch(12% 0.01 260)" }
+      },
+      "indigo": {
+        "comment": "Primary creative indigo (hue ~275)",
+        "50": { "value": "oklch(97% 0.02 275)" },
+        "100": { "value": "oklch(95.5% 0.015 275)" },
+        "200": { "value": "oklch(94% 0.02 275)" },
+        "300": { "value": "oklch(93% 0.06 275)" },
+        "400": { "value": "oklch(80% 0.12 275)" },
+        "500": { "value": "oklch(60% 0.18 275)" },
+        "600": { "value": "oklch(52% 0.18 275)" },
+        "700": { "value": "oklch(47% 0.18 275)" },
+        "800": { "value": "oklch(40% 0.15 275)" },
+        "900": { "value": "oklch(30% 0.02 275)" },
+        "950": { "value": "oklch(20% 0.02 275)" }
+      },
+      "rose": {
+        "comment": "Destructive/error color (hue ~20)",
+        "50": { "value": "oklch(97% 0.02 20)" },
+        "100": { "value": "oklch(94% 0.04 20)" },
+        "200": { "value": "oklch(90% 0.08 20)" },
+        "300": { "value": "oklch(82% 0.12 20)" },
+        "400": { "value": "oklch(70% 0.18 20)" },
+        "500": { "value": "oklch(58% 0.2 20)" },
+        "600": { "value": "oklch(53% 0.2 20)" },
+        "700": { "value": "oklch(45% 0.18 20)" },
+        "800": { "value": "oklch(38% 0.15 20)" },
+        "900": { "value": "oklch(30% 0.1 20)" },
+        "950": { "value": "oklch(20% 0.08 20)" }
+      },
+      "green": {
+        "comment": "Success color (hue ~155)",
+        "50": { "value": "oklch(97% 0.02 155)" },
+        "100": { "value": "oklch(94% 0.04 155)" },
+        "200": { "value": "oklch(90% 0.08 155)" },
+        "300": { "value": "oklch(82% 0.12 155)" },
+        "400": { "value": "oklch(72% 0.15 155)" },
+        "500": { "value": "oklch(60% 0.15 155)" },
+        "600": { "value": "oklch(52% 0.15 155)" },
+        "700": { "value": "oklch(45% 0.12 155)" },
+        "800": { "value": "oklch(38% 0.1 155)" },
+        "900": { "value": "oklch(30% 0.08 155)" },
+        "950": { "value": "oklch(20% 0.06 155)" }
+      },
+      "amber": {
+        "comment": "Warning color (hue ~75)",
+        "50": { "value": "oklch(97% 0.02 75)" },
+        "100": { "value": "oklch(94% 0.06 75)" },
+        "200": { "value": "oklch(90% 0.1 75)" },
+        "300": { "value": "oklch(85% 0.14 75)" },
+        "400": { "value": "oklch(80% 0.16 75)" },
+        "500": { "value": "oklch(75% 0.15 75)" },
+        "600": { "value": "oklch(65% 0.15 75)" },
+        "700": { "value": "oklch(55% 0.12 75)" },
+        "800": { "value": "oklch(45% 0.1 75)" },
+        "900": { "value": "oklch(35% 0.08 75)" },
+        "950": { "value": "oklch(25% 0.05 75)" }
+      },
+      "folder": {
+        "comment": "Folder icon colors (warm amber hue ~70)",
+        "closed": { "value": "oklch(72% 0.16 70)" },
+        "open": { "value": "oklch(68% 0.18 55)" }
+      },
+      "palette": {
+        "comment": "Drawing palette colors",
+        "black": { "value": "oklch(0% 0 0)" },
+        "red": { "value": "oklch(58% 0.22 25)" },
+        "orange": { "value": "oklch(70% 0.18 50)" },
+        "yellow": { "value": "oklch(82% 0.18 90)" },
+        "green": { "value": "oklch(65% 0.2 145)" },
+        "blue": { "value": "oklch(55% 0.2 260)" },
+        "purple": { "value": "oklch(55% 0.22 290)" },
+        "pink": { "value": "oklch(65% 0.22 350)" }
+      }
+    }
+  }
+}

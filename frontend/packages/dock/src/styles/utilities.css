@@ -1,0 +1,63 @@
+/**
+ * Dock Package - Shared Utilities
+ */
+
+@utility btn-icon {
+  display: grid;
+  place-items: center;
+  min-width: var(--size-icon-btn);
+  min-height: var(--size-icon-btn);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--easing-default);
+
+  &:hover {
+    background-color: var(--color-neutral-hover);
+    color: var(--color-foreground);
+  }
+
+  &:active {
+    background-color: var(--color-neutral-active);
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@utility btn-icon-destructive {
+  &:hover {
+    background-color: var(--color-destructive);
+    color: var(--color-destructive-foreground);
+  }
+}
+
+@utility drag-handle {
+  color: var(--color-handle-foreground);
+  cursor: grab;
+  transition: color var(--duration-fast) var(--easing-default);
+
+  &:hover {
+    color: var(--color-handle-foreground-hover);
+  }
+
+  &:active,
+  &[data-dragging] {
+    cursor: grabbing;
+    color: var(--color-handle-foreground-active);
+  }
+}
+
+@utility focus-ring {
+  outline: none;
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 var(--size-focus-ring) var(--color-ring-offset),
+      0 0 0 var(--size-focus-ring-offset) var(--color-ring);
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "extends": ["./frontend/packages/shared-config/biome/biome.v2.json"]
+}

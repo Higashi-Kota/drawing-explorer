@@ -1,0 +1,27 @@
+/**
+ * DockTabContainer Component Styles
+ */
+
+.dock-tab-container {
+  background-color: var(--color-card);
+  border: var(--spacing-px) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.dock-tab-header {
+  background: linear-gradient(180deg, var(--color-surface-raised) 0%, var(--color-muted) 100%);
+  border-bottom: var(--spacing-px) solid var(--color-tab-border);
+
+  &::-webkit-scrollbar {
+    height: var(--spacing-1);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: var(--radius-full);
+  }
+}
