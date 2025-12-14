@@ -1,110 +1,61 @@
-# Drawing Explorer
+# CLAUDE.md
 
-A drawing application with file explorer and docking panel interface.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Structure
+## Project Overview
 
-```
-drawing-explorer/
-├── frontend/
-│   ├── apps/
-│   │   └── web/           # Main web application (Vite + React)
-│   └── packages/
-│       ├── design-tokens/ # OKLCH color tokens (Style Dictionary)
-│       ├── dock/          # Docking panel system
-│       ├── file-tree/     # File explorer tree view
-│       ├── theme/         # Theme CSS (CSS-only package)
-│       └── shared-config/ # Shared Biome and TypeScript configs
-└── backend/               # Express server skeleton
-```
+Drawing Explorer is a drawing application with file explorer and docking panel interface. Users can create and edit drawings stored in the browser's Origin Private File System (OPFS).
 
-## Tech Stack
-
-### Frontend
-- **React 19** with TypeScript
-- **Vite 7** for build tooling
-- **Tailwind CSS v4** with @tailwindcss/vite plugin
-- **ts-pattern** for discriminated union matching
-- **lucide-react** for icons
-
-### Backend
-- **Express** with TypeScript
-- **tsx** for development
-
-### Tooling
-- **pnpm** workspaces for monorepo
-- **Biome 2.3.8** for linting and formatting (no ESLint/Prettier)
-- **Style Dictionary** for design token generation
-- **taze** for dependency checking
-
-## Development
+## Commands
 
 ```bash
-# Install dependencies
-pnpm install
-
-# Build design tokens (required before first run)
-pnpm --filter @internal/design-tokens build
-
-# Run frontend dev server (port 5000)
-pnpm dev
-
-# Run backend dev server
-pnpm dev:backend
-
-# Type check all packages
-pnpm typecheck
-
-# Lint/format
-pnpm lint
-pnpm format
-
-# Check for dependency updates
-pnpm package:check
+pnpm install                                  # Install dependencies
+pnpm --filter @internal/design-tokens build   # Build design tokens (required before first run)
+pnpm dev:frontend                             # Run frontend dev server (port 5000)
+pnpm dev:backend                              # Run backend dev server
+pnpm typecheck                                # Type check all packages
+pnpm lint                                     # Lint with Biome
+pnpm lint:fix                                 # Lint and fix with Biome
+pnpm format                                   # Format with Biome
+pnpm storybook:dock                           # Run dock package Storybook
+pnpm storybook:file-tree                      # Run file-tree package Storybook
 ```
 
-## Package Names
+## Architecture
 
-All packages use `@internal/` scope:
-- `@internal/web` - Main web application
-- `@internal/dock` - Docking panel system
-- `@internal/file-tree` - File explorer
-- `@internal/theme` - Theme CSS
-- `@internal/design-tokens` - Design tokens
-- `@internal/shared-config` - Shared configs
-- `@internal/backend` - Backend server
+### Monorepo Structure
 
-## Key Design Decisions
+- `frontend/apps/web/` - Main Vite + React application
+- `frontend/packages/dock/` - Docking panel system
+- `frontend/packages/file-tree/` - File explorer tree view
+- `frontend/packages/drawing/` - Drawing canvas component
+- `frontend/packages/theme/` - CSS-only theme (no TypeScript)
+- `frontend/packages/design-tokens/` - OKLCH color tokens via Style Dictionary
 
-1. **OKLCH Color Space**: All colors use OKLCH for perceptual uniformity
-2. **Grid-first Layout**: CSS Grid for complex layouts (docking system)
-3. **Event-driven State**: nanoevents for docking manager state changes
-4. **Mutable Tree Manager**: FileTreeManager uses mutable internal state with React re-render callbacks
-5. **Immutable Drag-Drop**: DragDropManager uses immutable state pattern
-6. **CSS-only Theme Package**: Theme is pure CSS with no TypeScript runtime
+All packages use `@internal/` scope.
 
-## Packages
+### Docking System (`@internal/dock`)
 
-### @internal/design-tokens
-Generates CSS variables using Style Dictionary with OKLCH colors.
+Tree-based layout using discriminated union types:
+- `PanelNode` - Individual panel with content
+- `ContainerNode` - Binary split (horizontal/vertical) with `first`/`second` children
+- `TabContainerNode` - Tab group containing multiple panels
 
-### @internal/theme
-CSS-only theme package with:
-- Base styles and CSS custom properties
-- Theme switching via data-theme attribute
-- Tailwind v4 @theme block integration
+`DockingManager` (mutable class) manages state and emits events via `nanoevents`. React components subscribe via `DockingProvider` context.
 
-### @internal/dock
-Docking panel system with:
-- Drag and drop panel rearrangement
-- Tab containers
-- Resizable splits
-- Maximize/restore panels
+### File Tree (`@internal/file-tree`)
 
-### @internal/file-tree
-File explorer with:
-- Tree view with expand/collapse
-- Multi-select support
-- Keyboard navigation
-- Drag and drop reordering
-- Context menu
+`FileTreeManager` (mutable class) manages tree structure with O(1) access via path indices. Maintains selection, expansion, and focus state internally. Uses `ts-pattern` for exhaustive discriminated union matching.
+
+`DragDropManager` uses immutable state pattern for drag-drop operations.
+
+### OPFS Integration
+
+Files stored in browser's Origin Private File System. Drawing files use `.draw` extension with JSON format containing strokes array.
+
+## Key Patterns
+
+- **Discriminated unions** with `ts-pattern` for type-safe matching
+- **Mutable manager classes** with event-driven React integration (not Redux/Zustand)
+- **CSS Grid** for dock layout, **OKLCH** color space for design tokens
+- **Biome** for linting/formatting (no ESLint/Prettier)
