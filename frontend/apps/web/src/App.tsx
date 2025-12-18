@@ -10,6 +10,7 @@ import { DrawingCanvas, type Stroke } from "@internal/drawing"
 import { Provider as JotaiProvider } from "jotai"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { Header } from "./components/Header"
+import { PWAUpdatePrompt } from "./components/PWAUpdatePrompt"
 import { Sidebar, type SidebarRef } from "./components/Sidebar"
 import type { FileNode as OPFSFileNode } from "./lib/opfs"
 import { readFile, writeFile } from "./lib/opfs"
@@ -362,6 +363,7 @@ export function App() {
 
   return (
     <JotaiProvider>
+      <PWAUpdatePrompt />
       <DockingProvider manager={dockingManager} availableContents={availableContents}>
         {({ manager, isAnyPanelMaximized }) => {
           const state = manager.getState()
