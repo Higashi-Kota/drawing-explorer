@@ -189,12 +189,14 @@ export function App() {
     })
 
     // Add file panel contents - use path as panelId for save identification
+    // key prop is critical to prevent React from reusing component instances across different files
     filePanels.forEach(({ name, strokes }, path) => {
       contents.push({
         key: path,
         label: name,
         content: (
           <DrawingCanvas
+            key={path}
             panelId={path}
             fileName={name}
             filePath={path}
