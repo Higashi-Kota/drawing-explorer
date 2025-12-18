@@ -38,7 +38,7 @@ export const PWAUpdatePrompt: React.FC = () => {
 
   return (
     <div className='fixed bottom-4 right-4 z-50 animate-fade-in-up'>
-      <div className='surface-raised rounded-lg p-4 max-w-sm shadow-lg'>
+      <div className='surface-raised rounded-lg p-4 w-80 shadow-lg'>
         <div className='flex items-start gap-3'>
           <div className='w-8 h-8 rounded-full bg-primary/10 grid place-items-center shrink-0'>
             <RefreshCw className='w-4 h-4 text-primary' />
