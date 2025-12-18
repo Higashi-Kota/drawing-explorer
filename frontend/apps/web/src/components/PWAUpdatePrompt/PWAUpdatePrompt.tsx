@@ -1,19 +1,38 @@
 import { useRegisterSW } from "virtual:pwa-register/react"
 import { RefreshCw, X } from "lucide-react"
 import type React from "react"
+import { useEffect, useRef } from "react"
 
 export const PWAUpdatePrompt: React.FC = () => {
+  const registrationRef = useRef<ServiceWorkerRegistration | null>(null)
+
   const {
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW({
     onRegistered(r) {
       console.log("SW Registered:", r)
+      registrationRef.current = r ?? null
     },
     onRegisterError(error) {
       console.log("SW registration error", error)
     },
   })
+
+  // バックグラウンドから復帰したときに更新チェック
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible" && registrationRef.current) {
+        console.log("Page became visible, checking for SW updates...")
+        registrationRef.current.update()
+      }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+    }
+  }, [])
 
   if (!needRefresh) return null
 
