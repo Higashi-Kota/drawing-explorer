@@ -241,10 +241,12 @@ export const DockTabContainer: React.FC<DockTabContainerProps> = ({ node, instan
 
       <div ref={contentRef} className='relative min-h-0 p-2 overflow-hidden'>
         {/* Show selected content */}
+        {/* key prop ensures React creates new component instance when switching between different files */}
         {activePanel &&
           (selectedContent
             ? isPanelComponent(selectedContent.content)
               ? React.cloneElement(selectedContent.content, {
+                  key: selectedContent.key,
                   panelId: activePanel.id,
                 })
               : selectedContent.content
